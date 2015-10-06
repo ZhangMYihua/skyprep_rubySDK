@@ -1,8 +1,11 @@
 # SkyprepRubySDK
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/skyprep_rubySDK`. To experiment with that code, run `bin/console` for an interactive prompt.
+The SkyPrep Ruby SDK is a wrapper on top of the HTTP SkyPrep API(https://skyprep.com/api). All JSON responses are automatically converted to similar Ruby Objects(hashes).
 
-TODO: Delete this and the text above, and describe your gem
+All API calls are mapped to a corresponding method. For example, get_all_users is mapped to api.get_users.
+
+The wrapper uses some metaprogramming so that any new methods that are added to the API should work automatically in the SDK.
+
 
 ## Installation
 
@@ -22,7 +25,24 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+First and foremost you need to include the module SkyprepRubySDK where you want to use it. So write 
+
+		include SkyprepRubySDK
+
+then initialize your own instance of the api by passing in your skyprep api key and account key. 
+		
+		your_api = SkyPrepApi.new('*api_key*', '*acct_key*')
+
+Then if you want to find a user with the get_user method from the api, just call the method on your api instance(methods all have the same names as call from the api). So get a user will be your_api.get_user({params}). i.e.
+
+		your_api.get_user({"user_id" => "*ID*"})
+
+		#sample response {
+			"id" : 32,
+			"first_name" : "John",
+			"last_name" : "Doe"
+			...
+		}
 
 ## Development
 
@@ -32,7 +52,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/skyprep_rubySDK.
+Bug reports and pull requests are welcome on GitHub at https://github.com/zhangmyihua/skyprep_rubySDK.
 
 
 ## License
