@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = %q{Ruby Wrapper for skyprep api.}
   spec.description   = %q{Converts JSON return from Skypreps API to ruby hash.}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.homepage      = "https://github.com/ZhangMYihua/skyprep_rubySDK"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org by setting 'allowed_push_host', or

@@ -44,8 +44,8 @@ module SkyprepRubySDK
 				else
 					self.get(string, args)
 				end
-			rescue Exception => e
-				puts e.message 
+			rescue => e#Exception => e
+				raise e.message
 			end
 		end
 	end
